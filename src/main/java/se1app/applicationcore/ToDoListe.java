@@ -7,6 +7,9 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class ToDoListe {
@@ -17,7 +20,9 @@ public class ToDoListe {
 	
 	private String name;
 	
-	@ElementCollection
-	@Column(name = "aufgaben")
-	private List<Aufgabe> aufgaben;
+	@ManyToMany
+	@JoinTable(name = "liste_hatAufgaben", joinColumns={@JoinColumn(name="todoliste_id")}, inverseJoinColumns={@JoinColumn(name="aufgabe_id")})
+	private List<Aufgabe> hatAufgaben;
+	
+	
 }
