@@ -1,6 +1,9 @@
 package se1app.applicationcore;
 
 import javax.persistence.*;
+
+import se1app.applicationcore.util.EmailType;
+
 import java.util.ArrayList;
 import java.util.List;
 

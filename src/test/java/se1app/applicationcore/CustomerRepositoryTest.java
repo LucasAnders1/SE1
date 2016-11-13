@@ -8,6 +8,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import se1app.applicationcore.repos.CustomerRepository;
+import se1app.applicationcore.util.EmailType;
+
 import java.util.List;
 import java.util.Optional;
 
