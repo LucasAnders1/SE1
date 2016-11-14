@@ -32,7 +32,8 @@ public class AufgabeErstellenImpl implements AufgabeErstellen{
 	@Override
 	public void saveAufgabe(AufgabeDTO aufgabeDTO) {
 		Aufgabe aufgabe = new Aufgabe(aufgabeDTO);
-		AufgabeRepo.saveAufgabe(aufgabe);
+		aufgabeRepo.save(aufgabe);
+//		AufgabeRepo.saveAufgabe(aufgabe);
 		
 	}
 
