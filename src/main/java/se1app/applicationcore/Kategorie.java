@@ -9,6 +9,12 @@ import javax.persistence.Id;
 @Entity
 public class Kategorie {
 	
+	public Kategorie(Kategorie kategorie) {
+		this.id = kategorie.id;
+		this.name = kategorie.name;
+		this.farbe = kategorie.farbe;
+	}
+
 	@GeneratedValue
 	@Id
 	private int id;
