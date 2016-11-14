@@ -9,6 +9,6 @@ import se1app.applicationcore.ToDoListe;
 
 public interface AufgabeRepo extends JpaRepository<Aufgabe, Integer>{
 	
-	List<Aufgabe> findAufgabenByList(ToDoListe liste);
+//	List<Aufgabe> findAufgabenByList(ToDoListe liste);
 
 }

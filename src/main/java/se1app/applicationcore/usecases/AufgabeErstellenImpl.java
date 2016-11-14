@@ -26,7 +26,7 @@ public class AufgabeErstellenImpl implements AufgabeErstellen{
 
 	@Override
 	public List<Aufgabe> findAufgabenByList(ToDoListe liste) {
-		return aufgabeRepo.findAufgabenByList(liste);
+		return toDoListeRepo.findAufgabenByhatAufgaben(liste);
 	}
 
 	@Override
