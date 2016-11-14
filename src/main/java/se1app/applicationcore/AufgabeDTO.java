@@ -3,6 +3,7 @@ package se1app.applicationcore;
 import java.util.ArrayList;
 import java.util.List;
 
+import se1app.applicationcore.util.AnwendungsException;
 import se1app.applicationcore.util.DatumTyp;
 import se1app.applicationcore.util.TimestampTyp;
 
@@ -10,15 +11,19 @@ public class AufgabeDTO {
 
 	public AufgabeDTO(int id, String name, String beschreibung, int prioritaet, 
 			TimestampTyp erstelldatum, DatumTyp termin, 
-			List<Benutzer> erledigtVon, Kategorie kategorie) {
-		this.id = id;
-		this.name = name;
-		this.beschreibung = beschreibung;
-		this.prioritaet = prioritaet;
-		this.erstelldatum = erstelldatum;
-		this.termin = termin;
-		this.erledigtVon = erledigtVon;
-		this.kategorie = kategorie;
+			List<Benutzer> erledigtVon, Kategorie kategorie) throws AnwendungsException {
+		if (name.equals("")) {
+			throw new AnwendungsException("Kein Name fuer die Aufgabe vergeben.");
+		} else {
+			this.id = id;
+			this.name = name;
+			this.beschreibung = beschreibung;
+			this.prioritaet = prioritaet;
+			this.erstelldatum = erstelldatum;
+			this.termin = termin;
+			this.erledigtVon = erledigtVon;
+			this.kategorie = kategorie;
+		}
 	}
 
 	private int id;
