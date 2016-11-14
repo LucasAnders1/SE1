@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import se1app.applicationcore.Aufgabe;
 import se1app.applicationcore.AufgabeDTO;
 import se1app.applicationcore.Benutzer;
-import se1app.applicationcore.ReservationRepository;
+import se1app.applicationcore.repos.ReservationRepository;
 import se1app.applicationcore.ToDoListe;
 import se1app.applicationcore.repos.AufgabeRepo;
 import se1app.applicationcore.repos.ToDoListeRepo;
@@ -32,7 +32,7 @@ public class AufgabeErstellenImpl implements AufgabeErstellen{
 	@Override
 	public void saveAufgabe(AufgabeDTO aufgabeDTO) {
 		Aufgabe aufgabe = new Aufgabe(aufgabeDTO);
-		return aufgabeRepo.saveAufgabe(aufgabe);
+		AufgabeRepo.saveAufgabe(aufgabe);
 		
 	}
 
