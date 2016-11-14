@@ -18,6 +18,19 @@ import se1app.applicationcore.util.EmailType;
 @Entity
 public class Benutzer {
 
+	public Benutzer(int id, String nickname, String vorname, String nachname, String passwort, EmailType email,
+			List<ToDoListe> hatListen, List<ToDoListe> istMitglied, List<ToDoListe> istAdmin) {
+		this.id = id;
+		this.nickname = nickname;
+		this.vorname = vorname;
+		this.nachname = nachname;
+		this.passwort = passwort;
+		this.email = email;
+		this.hatListen = hatListen;
+		this.istMitglied = istMitglied;
+		this.istAdmin = istAdmin;
+	}
+
 	@GeneratedValue
 	@Id
 	private int id;

@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import se1app.applicationcore.repos.AufgabeRepo;
 import se1app.applicationcore.util.DatumTyp;
+import se1app.applicationcore.util.EmailType;
 import se1app.applicationcore.util.TimestampTyp;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,6 +23,10 @@ public class AufgabeRepoTest {
 
 	@Autowired
 	private AufgabeRepo aufgabeRepo;
+	@Autowired
+	private ToDoListeRepo toDoListeRepo;
+	@Autowired
+	private BenutzerRepo benutzerRepo;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -31,11 +36,17 @@ public class AufgabeRepoTest {
 		Aufgabe a2 = new Aufgabe(2, "Gassi gehen", "im Park Gassi gehen",2, new TimestampTyp(LocalDateTime.parse("2016-11-14T10:12:40")),
 				new DatumTyp(LocalDateTime.parse("2016-11-21")),
 				new List<Benutzer>(), new Kategorie(1,"wichtig",new Color(255, 0, 0)));
+		Benutzer b1 = new Benutzer(1, "Hansi", "Hans", "Mueller", "1234", new EmailType("hansi123@web.de"),
+				List<ToDoListe> hatListen, List<ToDoListe> istMitglied, List<ToDoListe> istAdmin));
+		
 	}
 
 	@Test
-	public void test() {
-		
+	public void testSaveAufgabe() {
+		toDoListeRepo.saveAufgabe(a1);
+		toDoListeRepo.saveAufgabe(a2);
+		Benutzer benutzer = benutzerRepo.findBenutzerByName("Hans");
+		assertThat(toDoListeRepo.findListsByBenutzer().size() == 2);
 	}
 
 }
