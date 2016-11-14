@@ -14,6 +14,12 @@ public class Kategorie {
 		this.name = kategorie.name;
 		this.farbe = kategorie.farbe;
 	}
+	
+	public Kategorie(int id, String name, Color farbe) {
+		this.id = id;
+		this.name = name;
+		this.farbe = farbe;
+	}
 
 	@GeneratedValue
 	@Id

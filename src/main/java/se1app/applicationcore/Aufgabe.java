@@ -22,7 +22,18 @@ public class Aufgabe {
 		this.termin = aufgabeDTO.getTermin();
 		this.erledigtVon = aufgabeDTO.getErledigtVon();
 		this.kategorie = aufgabeDTO.getKategorie();
-		
+	}
+
+	public Aufgabe(int id, String name, String beschreibung, int prioritaet, TimestampTyp erstelldatum, DatumTyp termin,
+			List<Benutzer> erledigtVon, Kategorie kategorie) {
+		this.id = id;
+		this.name = name;
+		this.beschreibung = beschreibung;
+		this.prioritaet = prioritaet;
+		this.erstelldatum = erstelldatum;
+		this.termin = termin;
+		this.erledigtVon = erledigtVon;
+		this.kategorie = kategorie;
 	}
 
 	@GeneratedValue
