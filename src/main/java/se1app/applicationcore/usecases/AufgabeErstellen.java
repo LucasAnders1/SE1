@@ -14,10 +14,21 @@ import se1app.applicationcore.ToDoListe;
  */
 public interface AufgabeErstellen {
 
+	/** gibt alle Listen des Benutzers an
+	 * @param benutzer
+	 * @return
+	 */
 	List<ToDoListe> findListsByBenutzer(Benutzer benutzer);
 	
+	/** gibt alle Aufgaben der ausgewählten Liste zurück
+	 * @param liste
+	 * @return
+	 */
 	List<Aufgabe> findAufgabenByList(ToDoListe liste);
 
+	/**  speichert die Aufgabe im Repo
+	 * @param aufgabeDTO
+	 */
 	void saveAufgabe(AufgabeDTO aufgabeDTO);
 
 }

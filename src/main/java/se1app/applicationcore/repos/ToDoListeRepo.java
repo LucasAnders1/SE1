@@ -1,5 +1,6 @@
 package se1app.applicationcore.repos;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,4 +18,6 @@ public interface ToDoListeRepo extends JpaRepository<ToDoListe, Integer> {
 	List<ToDoListe> findListsByBenutzer(@Param("benutzerNr") Benutzer benutzerNr);
 	
 	List<Aufgabe> findAufgabenByhatAufgaben(ToDoListe liste);
+
+//	List<Aufgabe> findhatAufgabenByToDoListe(ToDoListe toDoListe);
 }
