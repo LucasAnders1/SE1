@@ -23,8 +23,8 @@
 //	@Override
 //	public List<Aufgabe> findAufgabenByBenutzer(Benutzer benutzer) {
 //		List<Aufgabe> list = new ArrayList<>();
-//		for(ToDoListe toDoListe : benutzerRepo.findhatListen()){
-//			list.addAll(toDoListeRepo.findhatAufgabenByToDoListe(toDoListe));
+//		for(ToDoListe toDoListe : benutzerRepo.findToDoListByhatListen()){
+//			list.addAll(toDoListeRepo.findAufgabenByhatAufgaben(toDoListe));
 //		}
 //		return list;
 //	}
