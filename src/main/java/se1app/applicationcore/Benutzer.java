@@ -56,4 +56,8 @@ public class Benutzer {
 	@ManyToMany
 	@JoinTable(name = "benutzer_istAdmin", joinColumns={@JoinColumn(name="benutzer_id")}, inverseJoinColumns={@JoinColumn(name="gruppe_id")})
 	private List<ToDoListe> istAdmin;
+
+	public String getName() {
+		return vorname;
+	}
 }

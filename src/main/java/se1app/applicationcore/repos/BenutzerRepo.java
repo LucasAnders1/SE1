@@ -12,5 +12,6 @@ import se1app.applicationcore.ToDoListe;
 public interface BenutzerRepo extends JpaRepository<Benutzer, Integer> {
 
 //	List<ToDoListe> findToDoListByhatListen();
+	Benutzer findBenutzerByVorname(String name);
 
 }

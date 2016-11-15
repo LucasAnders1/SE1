@@ -9,14 +9,10 @@ public class AufgabeBearbeitenImpl implements AufgabeBearbeiten {
 
 	@Autowired
 	AufgabeRepo aufgabeRepo;
-	
-	@Override
-	public Aufgabe findAufgabeByName(String name) {
-		return aufgabeRepo.findAufgabeByName(name);
-	}
 
 	@Override
-	public void aktualisiereAufgabe(Aufgabe aufgabe) {
+	public void aktualisiereAufgabe(int id) {
+		Aufgabe aufgabe = aufgabeRepo.findAufgabeById(id);
 		aufgabeRepo.save(aufgabe);
 	}
 

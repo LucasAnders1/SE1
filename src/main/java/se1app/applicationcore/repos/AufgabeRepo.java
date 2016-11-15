@@ -11,5 +11,9 @@ import se1app.applicationcore.ToDoListe;
 @Repository
 public interface AufgabeRepo extends JpaRepository<Aufgabe, Integer> {
 
+//	Aufgabe findAufgabeByVorname(String name);
+
+	Aufgabe findAufgabeById(int id);
+
 	Aufgabe findAufgabeByName(String name);
 }

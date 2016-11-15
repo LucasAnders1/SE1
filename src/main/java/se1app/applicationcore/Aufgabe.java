@@ -56,4 +56,8 @@ public class Aufgabe {
 	@ManyToOne
 	@JoinColumn(name="kategorie_id")
 	private Kategorie kategorie;
+
+	public String getName() {
+		return this.name;
+	}
 }
